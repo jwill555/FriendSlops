@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://b4e4niihncwmx"]
+
+[ext_resource type="Script" uid="uid://bh3co2nwbtcfq" path="res://Settings/settings_base.gd" id="1_1i1r4"]
+[ext_resource type="Texture2D" uid="uid://cl43iso63q1vf" path="res://icon.svg" id="2_kug7s"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=29884289 node_paths=PackedStringArray("optionButton", "timerAudioPoll")]
+script = ExtResource("1_1i1r4")
+optionButton = NodePath("Control/Main/Mic_Keybinds/SelectionForMic")
+timerAudioPoll = NodePath("AudioPolling")
+
+[node name="Control" type="Control" parent="." unique_id=383160879]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1922535364]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Main" type="HBoxContainer" parent="Control" unique_id=2124848469]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Audio" type="VBoxContainer" parent="Control/Main" unique_id=448813477]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AudioHeader" type="Label" parent="Control/Main/Audio" unique_id=1385781687]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Control/Main/Audio" unique_id=756503896]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="AudioHeader2" type="Label" parent="Control/Main/Audio" unique_id=1796001695]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="Control/Main/Audio" unique_id=395827963]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="AudioHeader3" type="Label" parent="Control/Main/Audio" unique_id=662877944]
+layout_mode = 2
+size_flags_vertical = 6
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="HSlider3" type="HSlider" parent="Control/Main/Audio" unique_id=589167145]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="AudioHeader4" type="Label" parent="Control/Main/Audio" unique_id=955322927]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Player Volume"
+horizontal_alignment = 1
+
+[node name="HSlider4" type="HSlider" parent="Control/Main/Audio" unique_id=217733438]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Mic_Keybinds" type="VBoxContainer" parent="Control/Main" unique_id=1371075169]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MicSelection" type="Label" parent="Control/Main/Mic_Keybinds" unique_id=1987966146]
+layout_mode = 2
+text = "Mic Selection"
+horizontal_alignment = 1
+
+[node name="SelectionForMic" type="OptionButton" parent="Control/Main/Mic_Keybinds" unique_id=983294940]
+layout_mode = 2
+size_flags_vertical = 2
+text_overrun_behavior = 1
+fit_to_longest_item = false
+
+[node name="Keybinds" type="Label" parent="Control/Main/Mic_Keybinds" unique_id=720826822]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Keybinds"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/Main/Mic_Keybinds" unique_id=649049269]
+layout_mode = 2
+size_flags_vertical = 2
+texture = ExtResource("2_kug7s")
+
+[node name="Nothing" type="VBoxContainer" parent="Control/Main" unique_id=1540599236]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MicSelection" type="Label" parent="Control/Main/Nothing" unique_id=638043061]
+layout_mode = 2
+text = "Daisy Man"
+horizontal_alignment = 1
+
+[node name="AudioPolling" type="Timer" parent="." unique_id=1800730661]
+autostart = true
+
+[node name="GitHuBtesting" type="Timer" parent="." unique_id=675339745]
+one_shot = true

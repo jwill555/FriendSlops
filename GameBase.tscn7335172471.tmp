@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://2jxl5pqv8n2w"]
+
+[ext_resource type="Script" uid="uid://xp8mwby6gh4i" path="res://game_base.gd" id="1_cwpfe"]
+[ext_resource type="PackedScene" uid="uid://qpy3itcmpeaa" path="res://Charaacter.tscn" id="2_5ajq4"]
+[ext_resource type="PackedScene" uid="uid://b7rm7yoyqopwl" path="res://AutoLoads/AudioManager.tscn" id="3_3re7u"]
+[ext_resource type="PackedScene" uid="uid://c613yggmsl08x" path="res://addons/twovoip/voiphelper/two_voip_speaker.tscn" id="4_du5sl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cwpfe"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5ajq4"]
+sky_material = SubResource("ProceduralSkyMaterial_cwpfe")
+
+[sub_resource type="Environment" id="Environment_3re7u"]
+background_mode = 2
+sky = SubResource("Sky_5ajq4")
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=540380971]
+script = ExtResource("1_cwpfe")
+player = ExtResource("2_5ajq4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1418939175]
+environment = SubResource("Environment_3re7u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1565386188]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 19.77365, 18.299265, 0)
+shadow_enabled = true
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=2129523496]
+spawn_path = NodePath("..")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=878597419]
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="TwoVoipSpeaker" parent="." unique_id=227661049 instance=ExtResource("4_du5sl")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=363211860]
+
+[node name="Node" parent="." unique_id=1403232359 node_paths=PackedStringArray("voipSpeaker") instance=ExtResource("3_3re7u")]
+voipSpeaker = NodePath("../TwoVoipSpeaker")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=179036795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.807028)
+size = Vector3(10, 10, 10)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=2003781037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.45273, 0, 2.877716)
+size = Vector3(10, 10, 10)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=197484563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.000618, 0, -3.2199364)
+size = Vector3(10, 10, 10)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1145410309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.418621, 0, -3.2199364)
+size = Vector3(10, 10, 10)

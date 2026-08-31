@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b7rm7yoyqopwl"]
+
+[ext_resource type="Script" uid="uid://m1shimiblgwn" path="res://AutoLoads/audio_manager.gd" id="1_00rx3"]
+
+[node name="Node" type="Node" unique_id=1403232359]
+script = ExtResource("1_00rx3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1683162212]
+autoplay = true
+bus = &"ProxChat"
+playback_type = 1
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=536010142]
